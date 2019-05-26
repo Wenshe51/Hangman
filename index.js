@@ -179,9 +179,10 @@ function increment(){
 			if(secs <= 9){
 				secs = "0" + secs;
 			}
-			if (secs>=60) {
-				secs="0";
-				mins++;
+			if(secs>=60){
+				secs=secs%60
+				if(secs <= 9)
+					secs = "0" + secs
 			}
 			document.getElementById("cronos").innerHTML = mins + ":" + secs;
 			increment();
